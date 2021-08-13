@@ -6,13 +6,19 @@ module.exports = (sequelize) => {
 			type: DataTypes.STRING
 		},
 		difficulty:{
-			type: DataTypes.INTEGER
+			type: DataTypes.INTEGER,
+			validate:{
+				isInt: true
+			}
 		},
 		duration:{
 			type: DataTypes.STRING
 		},
 		season:{
-			type: DataTypes.STRING
+			type: DataTypes.STRING,
+			validate:{
+				isIn:[['otoño', 'invierno', 'primavera', 'verano']]
+			}
 		}
 	}, {
 		timestamps: false

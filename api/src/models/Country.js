@@ -22,19 +22,18 @@ module.exports = (sequelize) => {
     	type:DataTypes.STRING,
     	allowNull:false
     },
-    capital:{
-    	type: DataTypes.STRING,
-    	allowNull:false
-    },
     subregion:{
     	type: DataTypes.STRING
+    },
+    capital:{
+    	type: DataTypes.STRING,
     },
     area:{
     	type: DataTypes.STRING
     },
-    pop: {
-    	type: DataTypes.INTEGER
-    }
+    // pop: {
+    // 	type: DataTypes.INTEGER
+    // }
   }, {
   	timestamps: false
   });
