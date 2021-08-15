@@ -4,13 +4,16 @@ const {Country, Activity} = require('../db.js')
 const getApiInfo = async () => {
 	const apiUrl = await axios.get('https://restcountries.com/v3/all')
 	const apiInfo = await apiUrl.data.map(country => {
+		//esto sera lo mejor?
+		let capital = Array.isArray(country.capital) ? country.capital[0]:country.capital
 		return {
+			//agregar default para cuando idcode es null, porque algunos no tienen
 			idcode: country.cioc,
 			name: country.name.common,
 			img: country.flags[1],
 			continent: country.region,
 			subregion: country.subregion,
-			capital: country.capital,
+			capital: capital,
 			area:country.area
 			// pop:
 		}
@@ -31,10 +34,22 @@ const getCountryInfo = async (code)=>{
 	return countryInfo
 }
 
-const getDbInfo = async(code)=>{
-	const condition = code ? {where:{idcode: code.toUpperCase()}} : {}
+const getDbInfo = async(code, foo=false)=>{
+	
+	const condition = code ? {where:{idcode: code.toUpperCase()}} : {msg:'no countryId provided'}
+	
 	condition.include = {model: Activity}
+
+	
+	if(foo) {
+		condition.attributes = ['idcode','capital', 'subregion', 'area']
+	}
+	
+	console.log(condition)
+	
 	const countryInfo = await Country.findAll(condition)
+
+	console.log(countryInfo)
 	return countryInfo
 }
 

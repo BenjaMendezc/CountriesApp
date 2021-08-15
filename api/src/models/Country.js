@@ -4,6 +4,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('country', {
+    //agregar un default para cuando es null, porque algunos no tienen
    	idcode: {
     	type: DataTypes.STRING,
     	allowNull: false,
@@ -27,10 +28,17 @@ module.exports = (sequelize) => {
     },
     capital:{
     	type: DataTypes.STRING,
+      allowNull:false
     },
     area:{
     	type: DataTypes.STRING
     },
+    // detailinfo:{
+    //   type: DataTypes.VIRTUAL,
+    //   get(){
+    //     return [this.idcode, this.capital, this.subregion, this.area]
+    //   }
+    // }
     // pop: {
     // 	type: DataTypes.INTEGER
     // }
