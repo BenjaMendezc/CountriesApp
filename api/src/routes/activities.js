@@ -8,7 +8,7 @@ router.post('/', async (req, res)=>{
 	const {name, difficulty, duration, season, idcode} = req.body
 	try{
 		const [newActivity, created] = await Activity.findOrCreate({
-			//hacer el where con otra cosa no con name, tiene que ser algo mas único
+			//hacer el where con otra cosa no con name, tiene que ser algo mas único(probar con hook en el modelo)
 			where: {name},
 			defaults:{
 			name: name,

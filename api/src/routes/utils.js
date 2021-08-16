@@ -53,9 +53,18 @@ const getDbInfo = async(code, foo=false)=>{
 	return countryInfo
 }
 
+const capitalizeStr = (string)=>{
+	const str1 = string.charAt(0).toUpperCase()
+	const str2 = string.slice(1).toLowerCase()
+
+	const str3 = str1.concat(str2)
+	return str3
+}
+
 
 module.exports = {
 	getApiInfo,
 	getCountryInfo,
-	getDbInfo
+	getDbInfo,
+	capitalizeStr
 }
