@@ -1,25 +1,29 @@
 import './App.css';
 import {Route} from 'react-router-dom'
+import NavBar from './components/Nav/NavBar.jsx'
+import CountryCards from './components/CountryCards/CountryCards.jsx'
+import Landing from './components/Landing/Landing.jsx'
+import Form from './components/Form/Form.jsx'
+import CountryDetail from './components/CountryDetail/CountryDetail.jsx'
+import About from './components/About/About.jsx'
 
 
 function App() {
   return (
     <div className="App">
-    <Route path='/main'>
-    	Navbar
-    </Route>
+    <Route path='/main' component={NavBar}/>
     <Route exact path='/'>
-    	WELCOME
+    	<Landing />
     </Route>
     <Route exact path='/main'>
-      <h1>Henry Countries</h1>
-      <p>aca van los datos del main :)</p>
+      <CountryCards />
     </Route>
     <Route exact path='/main/details'>
-    	<h1>Aca van los detalles :)</h1>
+    	<CountryDetail />
     </Route>
-    <Route exact path='/main/form'>
-    	<h1>Desde aca creo actividades :)</h1>
+    <Route exact path='/main/form' component ={Form} />
+    <Route exact path='/main/about'>
+    	<About />
     </Route>
     </div>
   );
