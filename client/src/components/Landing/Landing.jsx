@@ -1,7 +1,10 @@
 
-function Landing(){
+function Landing(props){
+	function onClick(){
+		props.history.push('/main')
+	}
 	return <div>
-		<button>Welcome!</button>
+		<button onClick={onClick} >Welcome!</button>
 	</div>
 }
 
