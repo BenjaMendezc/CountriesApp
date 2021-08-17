@@ -7,13 +7,13 @@ function NavBar(){
 	}
 	
 	return <div>
-	<Link to='/main'>
+	<Link to='/countries'>
 		<div>Home</div>
 	</Link>
-	<Link to='/main/about'>
+	<Link to='/countries/about'>
 		<div>About</div>
 	</Link>
-	<Link to='/main/form'>
+	<Link to='/activity'>
 		<div>Add Activity</div>
 	</Link>
 	<form  onSubmit={handleSubmit}>

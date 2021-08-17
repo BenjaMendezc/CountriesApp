@@ -11,18 +11,20 @@ import About from './components/About/About.jsx'
 function App() {
   return (
     <div className="App">
-    <Route path='/main' component={NavBar}/>
-    <Route exact path='/' component={Landing} />
-    <Route exact path='/main'>
-      <CountryCards />
-    </Route>
-    <Route exact path='/main/details'>
-    	<CountryDetail />
-    </Route>
-    <Route exact path='/main/form' component ={Form} />
-    <Route exact path='/main/about'>
-    	<About />
-    </Route>
+
+        <Route exact path='/' component={Landing} />
+        <Route path='/countries' component={NavBar}/>
+        <Route exact path='/countries'>
+          <CountryCards />
+        </Route>
+        <Route exact path='/countries/:idPais'>
+        	<CountryDetail />
+        </Route>
+        <Route exact path='/activity' component ={Form} />
+        <Route exact path='/countries/about'>
+        	<About />
+        </Route>
+
     </div>
   );
 }

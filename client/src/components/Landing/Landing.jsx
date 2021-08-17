@@ -1,7 +1,7 @@
 
 function Landing(props){
 	function onClick(){
-		props.history.push('/main')
+		props.history.push('/countries')
 	}
 	return <div>
 		<button onClick={onClick} >Welcome!</button>
