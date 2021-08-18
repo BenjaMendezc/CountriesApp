@@ -1,1 +1,3 @@
 export const CONSOLE_LOG = 'CONSOLE_LOG'
+export const GET_COUNTRIES = 'GET_COUNTRIES'
+export const GET_DETAILS = 'GET_DETAILS'
