@@ -29,7 +29,8 @@ module.exports = (sequelize) => {
     },
     capital:{
     	type: DataTypes.STRING,
-      allowNull:false
+      allowNull:false,
+      defaultValue: 'No info'
     },
     area:{
     	type: DataTypes.STRING

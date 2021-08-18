@@ -45,12 +45,12 @@ const getDbInfo = async(code, foo=false)=>{
 		condition.attributes = ['idcode','capital', 'subregion', 'area']
 	}
 	
-	console.log(condition)
+
 	
 	const countryInfo = await Country.findAll(condition)
 
-	console.log(countryInfo)
-	return countryInfo
+
+	return countryInfo[0]
 }
 
 const capitalizeStr = (string)=>{

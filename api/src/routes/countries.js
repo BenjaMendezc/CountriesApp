@@ -30,12 +30,11 @@ router.get('/', async(req,res,next)=>{
 
 router.get('/', async (req, res)=>{
 	
-	let apiInfo = await getApiInfo()
+	const apiInfo = await getApiInfo()
 
-	// console.log(apiInfo)
-	
+
 	try{
-		let newCountry = apiInfo.forEach(async (country)=>{
+	apiInfo.forEach( async(country)=>{
 			await Country.create({
 				idcode: country.idcode,
 				name: country.name,
@@ -45,19 +44,22 @@ router.get('/', async (req, res)=>{
 				capital: country.capital,
 				area: country.area
 			})
+			
 		})
-		res.send({msg:'db loaded'})
+
+		res.send(apiInfo)
+
 	} catch(e){
 		res.send('error')
 	}
 
 })
 
-router.get('/:idPais', async(req, res)=>{
+router.get('/params/:idPais', async(req, res)=>{
 	try{
 		const {idPais} = req.params
 		// const apiCountryInfo = await getCountryInfo(idPais)
-		let dbCountryInfo = await getDbInfo(idPais, true)
+		let dbCountryInfo = await getDbInfo(idPais)
 		// console.log(dbCountryInfo)
 		
 
