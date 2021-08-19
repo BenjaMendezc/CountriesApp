@@ -3,7 +3,7 @@ const {Country, Activity} = require('../db.js')
 
 const getApiInfo = async () => {
 	const apiUrl = await axios.get('https://restcountries.com/v3/all')
-	const apiInfo = await apiUrl.data.map(country => {
+	const apiInfo = apiUrl.data.map(country => {
 		//esto sera lo mejor?
 		let capital = Array.isArray(country.capital) ? country.capital[0]:country.capital
 		return {

@@ -35,12 +35,6 @@ module.exports = (sequelize) => {
     area:{
     	type: DataTypes.STRING
     },
-    // detailinfo:{
-    //   type: DataTypes.VIRTUAL,
-    //   get(){
-    //     return [this.idcode, this.capital, this.subregion, this.area]
-    //   }
-    // }
     // pop: {
     // 	type: DataTypes.INTEGER
     // }

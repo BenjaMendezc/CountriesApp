@@ -19,6 +19,8 @@ router.get('/', async(req,res,next)=>{
 			}
 		}
 	})
+
+	console.log('dataBase', countryByName)
 	res.send(countryByName.length ? countryByName : 'Country not found')
 	
 	}catch(e){

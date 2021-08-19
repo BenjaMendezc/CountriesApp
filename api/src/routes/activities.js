@@ -23,7 +23,7 @@ router.post('/', async (req, res)=>{
 
 		await newActivity.addCountries(countries)
 
-
+		
 		res.json({created: created, newActivity})
 
 	}catch(e){
