@@ -12,6 +12,8 @@ It consumes data from an API throught a Back End developed in NodeJS using expre
 Some features of the project:
 
 Search Caché
+
 Ordering and filtering
+
 Controlled Form for the creation of Turist Activities, wich are stored and linked through middle.tables in the databes by using Sequelize to every API country
 
